@@ -1,5 +1,6 @@
 # ICLRec
 Pytorch implementation of paper: Intent Contrastive Learning for Sequential Recommendation
+
 Official implementation: [https://github.com/salesforce/ICLRec](https://github.com/salesforce/ICLRec).
 ## Datasets
 Toys dataset is contained in this repository.
