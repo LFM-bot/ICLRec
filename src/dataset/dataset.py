@@ -50,19 +50,6 @@ class BaseSequentialDataset(Dataset):
     def collate_fn(self, x):
         return self.basic_SR_collate_fn(x)
 
-    # def basic_SR_collate_fn(self, x):
-    #     """
-    #     x: [(seq_1, len_1, tar_1), ..., (seq_n, len_n, tar_n)]
-    #     """
-    #     tensor_dict = {}
-    #     tensor_list = [torch.cat([x[i][j].unsqueeze(0) for i in range(len(x))], 0).long() for j in range(len(x[0]))]
-    #
-    #     item_seq, seq_len, target = tensor_list
-    #     tensor_dict['item_seq'] = item_seq
-    #     tensor_dict['seq_len'] = seq_len
-    #     tensor_dict['target'] = target
-    #     return tensor_dict
-
     def basic_SR_collate_fn(self, x):
         """
         x: [(seq_1, len_1, tar_1), ..., (seq_n, len_n, tar_n)]
@@ -137,42 +124,6 @@ class CL4SRecDataset(BaseSequentialDataset):
                        torch.tensor(aug_len_2, dtype=torch.long))
 
         return cur_tensors
-
-    # def collate_fn(self, x):
-    #     if not self.train:
-    #         return self.basic_SR_collate_fn(x)
-    #
-    #     tensor_dict = {}
-    #     tensor_list = [torch.cat([x[i][j].unsqueeze(0) for i in range(len(x))], 0).long() for j in range(len(x[0]))]
-    #
-    #     item_seq, seq_len, target, aug_seq_1, aug_seq_2, aug_len_1, aug_len_2 = tensor_list
-    #
-    #     tensor_dict['item_seq'] = item_seq
-    #     tensor_dict['seq_len'] = seq_len
-    #     tensor_dict['target'] = target
-    #     tensor_dict['aug_seq_1'] = aug_seq_1
-    #     tensor_dict['aug_seq_2'] = aug_seq_2
-    #     tensor_dict['aug_len_1'] = aug_len_1
-    #     tensor_dict['aug_len_2'] = aug_len_2
-    #
-    #     return tensor_dict
-
-    # def collate_fn(self, x):
-    #     if not self.train:
-    #         return self.basic_SR_collate_fn(x)
-    #
-    #     item_seq, seq_len, target, aug_seq_1, aug_seq_2, aug_len_1, aug_len_2 = zip(*x)
-    #
-    #     tensor_dict = {}
-    #     tensor_dict['item_seq'] = torch.stack(item_seq, 0)
-    #     tensor_dict['seq_len'] = torch.stack(seq_len, 0)
-    #     tensor_dict['target'] = torch.stack(target, 0)
-    #     tensor_dict['aug_seq_1'] = torch.stack(aug_seq_1, 0)
-    #     tensor_dict['aug_seq_2'] = torch.stack(aug_seq_2, 0)
-    #     tensor_dict['aug_len_1'] = torch.stack(aug_len_1, 0)
-    #     tensor_dict['aug_len_2'] = torch.stack(aug_len_2, 0)
-    #
-    #     return tensor_dict
 
     def collate_fn(self, x):
         if not self.train:
