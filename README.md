@@ -9,7 +9,7 @@ Toys dataset is contained in this repository.
 ## Quick Start
 You can run the model with the following code:
 ```
-python runICLRec.py --embed_size 128 --num_intent_cluster 256 
+python runICLRec.py --dataset toys --embed_size 128 --num_intent_cluster 256 
 ```
 
 
