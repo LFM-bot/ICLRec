@@ -1,7 +1,9 @@
 # ICLRec
 Pytorch implementation of paper: Intent Contrastive Learning for Sequential Recommendation
 
-Official implementation: [https://github.com/salesforce/ICLRec](https://github.com/salesforce/ICLRec).
+The recommendation loss is changed from BPR to cross-entropy loss for better performance.
+
+You can also ref to offical implementation: [https://github.com/salesforce/ICLRec](https://github.com/salesforce/ICLRec).
 ## Datasets
 Toys dataset is contained in this repository.
 ## Quick Start
