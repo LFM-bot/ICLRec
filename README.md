@@ -1,5 +1,5 @@
 # ICLRec
-Pytorch implementation of paper: Intent Contrastive Learning for Sequential Recommendation.
+Pytorch implementation for paper: Intent Contrastive Learning for Sequential Recommendation.
 
 The recommendation loss is changed from BPR to cross-entropy loss for better performance.
 
